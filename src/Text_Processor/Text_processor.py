@@ -16,7 +16,7 @@ def clean_stop_words(text: str) -> list:
     sans_stop_words = [
         token.lemma_.lower() for token in preprocessed_text 
         if (not token.is_stop) and
-        (token.pos_ == "NOUN" or token.pos_ == "ADJ") and
+        (token.pos_ in ["NOUN","ADJ","PROPN"]) and
         (token.text not in PUNCT)
     ]
 
