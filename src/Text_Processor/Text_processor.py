@@ -22,12 +22,12 @@ def clean_stop_words(text: str) -> list:
 
     return sans_stop_words
 
-def difference(tokens_cv: list[str], tokens_job: list[str]) -> list[str]:
+def difference(tokens_subject: list[str], tokens_target: list[str]) -> list[str]:
 
-    set_cv = Counter(tokens_cv)
-    set_job = Counter(tokens_job)
+    set_subject = Counter(tokens_subject)
+    set_target = Counter(tokens_target)
 
-    difference = [token for token in set_job.keys() if token not in set_cv]
+    difference = [token for token in set_target.keys() if token not in set_subject]
     difference.sort()
 
     return difference
