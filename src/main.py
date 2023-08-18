@@ -17,8 +17,8 @@ def main() -> int:
     cv: str = File_Processor.pdf_to_string(cv_file)
     job: str = File_Processor.text_to_string(job_file)
 
-    cv_processed = Text_Processor.clean_stop_words(cv)
-    job_processed = Text_Processor.clean_stop_words(job)
+    cv_processed: list[str] = Text_Processor.clean_stop_words(cv)
+    job_processed: list[str] = Text_Processor.clean_stop_words(job)
 
     # Experimenting with different scoring methods.
 
